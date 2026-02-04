@@ -1,0 +1,37 @@
+{
+    "name": "@local/generator",
+    "version": "3.5.4",
+    "author": "test",
+    "private": "true",
+    "bin": {
+        "adbgen": "./bin/cli.mjs",
+        "adbgen-node": "./bin/cli.cjs"
+    },
+    "main": "./bin/index.cjs",
+    "module": "./bin/index.mjs",
+    "types": "./bin/index.d.ts",
+    "files": [
+        "bin"
+    ],
+    "dependencies": {
+        "@dotenvx/dotenvx": "^1.44.1",
+        "arktype": "^2.1.20",
+        "commander": "^14.0.0",
+        "graphology": "^0.26.0",
+        "prettier": "^3.3.2"
+    },
+    "peerDependencies": {
+        "@local/client": "^3.5.4"
+    },
+    "devDependencies": {
+        "graphology-types": "^0.24.8",
+        "vitest": "^3.1.2",
+        "typescript": "^5.9.3"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.json && tsdown",
+        "build:ts": "tsc -p tsconfig.json",
+        "pack": "pnpm pack --pack-destination=./releases",
+        "test": "vitest"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "@local/client",
+    "version": "3.5.4",
+    "private": "true",
+    "author": "test",
+    "type": "module",
+    "main": "./bin/index.cjs",
+    "module": "./bin/index.mjs",
+    "types": "./bin/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./bin/index.d.ts",
+            "require": "./bin/index.cjs",
+            "import": "./bin/index.mjs"
+        }
+    },
+    "dependencies": {
+        "change-case": "^5.4.4",
+        "eventemitter3": "^5.0.1",
+        "uuid": "^9.0.1"
+    },
+    "peerDependencies": {
+        "mqtt": "^5.3.5"
+    },
+    "devDependencies": {
+        "@types/uuid": "^9.0.8",
+        "@types/ws": "^8.5.10",
+        "dotenv": "^16.4.5",
+        "typescript": "^5.9.3"
+    },
+    "files": [
+        "bin",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json && tsdown",
+        "pack": "pnpm pack --pack-destination=./releases",
+        "build:tsc": "tsc -p tsconfig.json",
+        "format": "biome format \"./src\" --write",
+        "test": "vitest"
+    }
+}
